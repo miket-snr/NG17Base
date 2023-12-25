@@ -2,5 +2,10 @@ span{
     padding-left: 25px;
     text-align: right;
     display: inline-block;
-    width: 100px;
+    width: 100%;
 }
+
+
+  .signature {
+    font-size:0.8rem;
+  }

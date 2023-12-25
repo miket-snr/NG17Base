@@ -1,0 +1,5 @@
+@if (EditAllowed){
+<quill-editor [(ngModel)]="helper.LINE1"></quill-editor>
+} @else {
+<quill-view [content]="helper.LINE1" theme="snow"></quill-view>
+}

@@ -8,12 +8,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Observable, map, shareReplay } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { AuthserviceService } from './_services/authservice.service';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet,MatSidenavModule,MatToolbarModule,MatListModule,MatIconModule,RouterModule,MatSnackBarModule,
-  MatIconModule],
+   MatExpansionModule, MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -25,7 +28,7 @@ export class AppComponent implements OnInit  {
     map(result => result.matches),
     shareReplay()
   );
-  constructor(private breakpointObserver: BreakpointObserver, private snackBar: MatSnackBar) {}
+  constructor(private breakpointObserver: BreakpointObserver, private snackBar: MatSnackBar, public authserv: AuthserviceService) {}
   ngOnInit() {
     setTimeout(() => {
       this.opened = false;
